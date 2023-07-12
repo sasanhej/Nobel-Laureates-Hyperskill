@@ -1,0 +1,11 @@
+type: unsupported
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  This is a matching task. You can use this editor as a playground
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17156#comment
+status: Solved
+record: -1

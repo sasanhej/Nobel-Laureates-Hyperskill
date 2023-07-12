@@ -1,0 +1,9 @@
+type: framework
+content:
+- Load the data
+- Correct the birthplaces
+- Correct the dates
+- Plot a pie chart
+- Plot a bar plot
+- Plot a box plot
+current_task: 5

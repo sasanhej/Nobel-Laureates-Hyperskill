@@ -1,0 +1,27 @@
+type: dataset
+files:
+- name: main.py
+  visible: true
+  text: "#  write your code here \n\n"
+  learner_created: false
+- name: data/sample/input.txt
+  visible: true
+  text: |
+    livingsp,nonlivingsp,totsp,price
+    16,11,NaN,121
+    29,12,41.0,152
+    24,9,NaN,101
+    20,8,28.0,187
+    17,12,29.0,129
+    16,12,NaN,137
+    28,7,NaN,101
+  learner_created: false
+- name: data/dataset/input.txt
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/17159#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 19 May 2023 10:00:36 UTC"
+record: -1

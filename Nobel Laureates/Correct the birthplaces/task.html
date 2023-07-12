@@ -1,0 +1,28 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>The data is very heterogeneous. Let's correct it! As you can see, two columns contain information on the Nobel laureates' places of birth, aggregate the information into one column.</p>
+<h5 id="objectives">Objectives</h5>
+<p>Some values in the <code class="java">born_in</code> column are missing. Correct them with the <code class="java">place_of_birth</code> column values.</p>
+<ol>
+<li>Extract the country names from the <code class="java">place_of_birth</code> column. Typically, this column contains the name of the city and, sometimes, state and country of birth. The values are separated by a comma. To extract the country, split each column value by comma (if it is present) and take the last value. Apply <code class="java">.strip()</code> to the Python string to remove the excessive white spaces. If no comma is present in the column value, replace the value with <code class="java">None</code>;</li>
+<li>Fill the <code class="java">born_in</code> empty values with the new values of the <code class="java">place_of_birth</code> column. If the <code class="java">born_in</code> column still contains empty values, drop the respective rows. Reset the DataFrame index;</li>
+<li>Modify the names of countries — replace <code class="java">US</code>, <code class="java">United States</code>, and <code class="java">U.S.</code> with <code class="java">USA</code>, and <code class="java">United Kingdom</code> with <code class="java">UK</code>.</li>
+</ol>
+<p>As a result, output a list of <code class="java">born_in</code> column values.</p>
+<h5 id="example">Example</h5>
+<p><strong>Example 1</strong>:</p>
+<p><em>Note that most columns and rows in the example are omitted. </em></p>
+<p><em>Initial DataFrame:</em></p>
+<pre><code class="language-no-highlight">                     born_in                       place_of_birth
+0                                       Bahía Blanca ,  Argentina
+1     Bosnia and Herzegovina   Sarajevo ,  Bosnia and Herzegovina
+2                         US
+3                                                    Buenos Aires                              </code></pre>
+<p><em>Resulting DataFrame:</em></p>
+<pre><code class="language-no-highlight">                     born_in                 place_of_birth
+0                  Argentina                      Argentina
+1     Bosnia and Herzegovina         Bosnia and Herzegovina
+2                        USA                                </code></pre>
+<p><em>Output:</em></p>
+<pre><code class="language-no-highlight">['Argentina', 'Bosnia and Herzegovina', 'USA']</code></pre>
+</div>

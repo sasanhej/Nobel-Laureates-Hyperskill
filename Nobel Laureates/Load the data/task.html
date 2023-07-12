@@ -1,0 +1,54 @@
+<div class="step-text">
+<h5 id="theory">Theory</h5>
+<p>JSON (JavaScript Object Notation)<strong> </strong>is a file format to store data. Let's look at an example:</p>
+<pre><code class="language-json">{"born_in":{"0":"Argentina","1":"Bosnia and Herzegovina"},"category":{"0":"Physiology or Medicine","1":"Literature"},"country":{"0":"Argentina","1":""},"date_of_birth":{"0":"8 October 1927","1":"9 October 1892"},"date_of_death":{"0":"24 March 2002","1":"13 March 1975"},"gender":{"0":"male","1":"male"},"link":{"0":"http:\/\/en.wikipedia.org\/wiki\/C%C3%A9sar_Milstein","1":"http:\/\/en.wikipedia.org\/wiki\/Ivo_Andric"},"name":{"0":"C\u00e9sar Milstein","1":"Ivo Andric *"},"place_of_birth":{"0":"Argentina","1":"Bosnia and Herzegovina"},"place_of_death":{"0":"Cambridge , England","1":"Belgrade, SR Serbia, SFR Yugoslavia (present-day Serbia)"},"text":{"0":"C\u00e9sar Milstein , Physiology or Medicine, 1984","1":"Ivo Andric *,  born in then  Austria\u2013Hungary , now Bosnia and Herzegovina , Literature, 1961"},"year":{"0":1984,"1":1961},"year_born":{"0":1927,"1":1892},"age_of_winning":{"0":57,"1":69},"born_in_corrected":{"0":"Other countries","1":"Other countries"}}</code></pre>
+<p>This file format is convenient when storing data, but presents a challenge to interpret it manually. The Python <code class="language-json">pandas</code> library is one of the instruments that can parse data stored as JSON.</p>
+<h5 id="description">Description</h5>
+<p>In this project, you will explore data on the Nobel laureates from various years. You have a dataset containing several columns:</p>
+<ul>
+<li><code class="language-json">born_in</code> — Nobel laureate's country of birth.</li>
+<li><code class="language-json">category</code> — Nobel Prize category.</li>
+<li><code class="language-json">country</code> — the country the Nobel laureate represented.</li>
+<li><code class="language-json">date_of_birth</code> — the Nobel laureate's date of birth.</li>
+<li><code class="language-json">date_of_death</code> — the Nobel laureate's date of death.</li>
+<li><code class="language-json">gender</code> — Nobel laureate's gender.</li>
+<li><code class="language-json">link</code> — a link to the wiki page containing the information about Nobel laureate.</li>
+<li><code class="language-json">name</code> — the Nobel laureate's name.</li>
+<li><code class="language-json">place_of_birth</code> — the Nobel laureate's place of birth.</li>
+<li><code class="language-json">place_of_death</code> — the Nobel laureate's place of death.</li>
+<li><code class="language-json">year</code> — the year Nobel laureate obtained the Nobel Prize.</li>
+</ul>
+<p>We have automated the data download process in the <em>.py</em> file provided to you. However, if that is inconvenient, feel free to download the dataset: <a href="https://docs.google.com/uc?export=download&amp;id=1tqqThTxAxZvvR1kO8yrzSxDE9JHpOTCa" rel="noopener noreferrer nofollow" target="_blank">nobel_laureates.json</a>.</p>
+<h5 id="objectives">Objectives</h5>
+<p>In this step, you need to load and explore the data.</p>
+<ol>
+<li>Load the dataset from the JSON file;</li>
+<li>Explore the data and check what the axes are, get the shape of the DataFrame, use <code class="language-json">.info()</code> to check for the data types and whether there are any missing values;</li>
+<li>Use the <code class="language-json">.duplicated()</code> method to check whether there are any duplicate rows. Print <code class="language-json">False</code> if there are no duplicate rows, otherwise print <code class="language-json">True</code>.</li>
+<li>Drop all the rows where the <code class="language-json">gender</code> column does not contain any values. Hint: use the <code class="language-json">subset</code> parameter of the <code class="language-json">.dropna()</code> method in <code class="language-json">pandas</code>.</li>
+<li>Re-index the DataFrame so that the index contains consecutive numbers. Do not forget to remove the old index column.</li>
+</ol>
+<p>To complete this stage, output the results of the step 3. Then on a new line print a dictionary containing the first 20 rows of the DataFrame with the DataFrame method <code class="language-json">.to_dict()</code> for the <code class="language-json">country</code> and <code class="language-json">name</code> columns.</p>
+<h5 id="example">Example</h5>
+<p><strong>Example 1</strong>:</p>
+<p><em>Most columns and rows in the example are omitted. </em></p>
+<p><em>Initial DataFrame:</em></p>
+<pre><code class="language-no-highlight">                     born_in                category   gender
+0                             Physiology or Medicine     male
+1     Bosnia and Herzegovina              Literature   female
+2     Bosnia and Herzegovina               Chemistry     male
+3     Bosnia and Herzegovina               Chemistry     male
+4                                              Peace     None
+5                                              Peace     male
+6     Bosnia and Herzegovina              Literature     male</code></pre>
+<p><em>Resulting DataFrame:</em></p>
+<pre><code class="language-no-highlight">                     born_in                category   gender
+0                             Physiology or Medicine     male
+1     Bosnia and Herzegovina              Literature   female
+2     Bosnia and Herzegovina               Chemistry     male
+3                                              Peace     male
+4     Bosnia and Herzegovina              Literature     male</code></pre>
+<p><em>Output:</em></p>
+<pre><code class="language-no-highlight">True
+{'born_in': {0: '', 1: 'Bosnia and Herzegovina', 2: 'Bosnia and Herzegovina', 3: '', 4: 'Bosnia and Herzegovina'}, 'category': {0: 'Physiology or Medicine', 1: 'Literature', 2: 'Chemistry', 3: 'Peace', 4: 'Literature'}, 'gender': {0: 'male', 1: 'female', 2: 'male', 3: 'male', 4: 'male'}}</code></pre>
+</div>
